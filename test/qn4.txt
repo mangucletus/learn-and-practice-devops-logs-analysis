@@ -1,11 +1,36 @@
-192.168.1.10 is the IP address of the client making
-the request.
-200 is the HTTP status code.
-15015 is the size of the returned object in bytes.
-ask
-Your goal is to analyze all .10g files within the /var/logs/server/ directory and its subdirectories, identifying IP addresses that have made more than threshold Successful post requests within any 15-minute window between start_date and current_ Define start_date = current_date duration da with current_date = 15/Sep/2021:00:00:00 +000
-Implement a function solution (threshold: int, duration: int) -> List[str] that determines suspicious IP addresses, sorted lexicographicall
+You are working with web server log files located in the /var/logs/server/ directory and its subdirectories. Each log file (with .log extension) contains details about HTTP requests made to the server, including the IP address, timestamp, request method, URL, protocol version, status code, and response size.
+Each log line in any of these log files is formatted as follows:
+192.168.1.10 - - [15/Sep/2021:13:25:34 +0000] "POST /api/info HTTP/1.1" 200 15015
+WHERE:
+
+192.168.1.10 is the IP address of the client making the request
+[15/Sep/2021:13:25:34 +0000] is the timestamp
+"POST /api/info HTTP/1.1" is the request line including HTTP method, URL, and protocol version
+200 is the HTTP status code
+15015 is the size of the returned object in bytes
+
+Task
+Your goal is to analyze all .log files within the /var/logs/server/ directory and its subdirectories, identifying IP addresses that have made more than threshold successful POST requests within any 15-minute window between start_date and current_date.
+Define:
+
+start_date = current_date - duration days
+current_date = 15/Sep/2021:00:00:00 +0000
+
+Implement a function solution(threshold: int, duration: int) -> List[str] that determines suspicious IP addresses, sorted lexicographically.
 Output
-The output should be a lexicographically sort
-nsses as strings.
-ting the
+The output should be a lexicographically sorted list of suspicious IP addresses as strings.
+
+
+
+
+Function Call: solution(threshold=5, duration=7)
+
+Expected Output:
+["192.168.1.100"]
+
+Explanation:
+
+IP 192.168.1.100 made 6 successful POST requests within a 15-minute window (10:00-10:14)
+This exceeds the threshold of 5, making it suspicious
+IP 10.0.0.50 only made 2 requests, below the threshold
+Result is sorted lexicographically

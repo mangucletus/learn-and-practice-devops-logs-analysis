@@ -1,9 +1,15 @@
-st part ([12
-mestamp.
-ST/api/vi/resource HTTP/1.1" is the request , including the HTTP method, path requested, and otocol version.
+You are working with web server log files located in the /var/logs/ directory. Each log file (e.g., app.log) contains details about HTTP requests made to the server, including the timestamp, request type, file requested, protocol version, status code, and the size of the response in bytes.
+Each log line in the log file is formatted as follows:
+[12/Sep/2023:13:25:34 -0400] "POST /api/v1/resource HTTP/1.1" 201 54321
+WHERE:
+
+The first part ([12/Sep/2023:13:25:34 -0400]) is the timestamp.
+"POST /api/v1/resource HTTP/1.1" is the request line, including the HTTP method, path requested, and protocol version.
 201 is the HTTP status code.
 54321 is the size of the response in bytes.
-ask
-dentify the resources that received successful POST requests recorded in app.log and compute the total number of bytes transferred foreach resource, Form a string for each resource alongside its cumulative bytes transferred. Sort the resources first by the number of requests in descending order, and for resources with t identical number of requests, sort them lexicographic path name,
+
+Task
+Identify the resources that received successful POST requests recorded in app.log and compute the total number of bytes transferred for each resource. Form a string for each resource alongside its cumulative bytes transferred. Sort the resources first by the number of requests in descending order, and for resources with identical number of requests, sort them lexicographically by path name.
 Output
-The function solution should return the resou received successful post requests and the to of bytes transferred for each resource separat and sorted as described above,
+The function solution should return the resources that received successful POST requests and the total of bytes transferred for each resource, separated and sorted as described above.
+Return format: List of strings in format "path:total_bytes:request_count"

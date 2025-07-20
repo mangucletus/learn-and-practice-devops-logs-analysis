@@ -41,6 +41,28 @@ if __name__ == '__main__':
 
 
 
+Expected Output:
+
+[
+    "/api/v1/orders:6400:3",
+    "/api/v1/users:2560:2", 
+    "/api/v1/products:768:1"
+]
+
+Explanation:
+
+/api/v1/orders: 3 requests, total bytes = 2048 + 2560 + 1792 = 6400
+/api/v1/users: 2 requests, total bytes = 1024 + 1536 = 2560
+/api/v1/products: 1 request, total bytes = 768
+Sorted by request count (descending): 3, 2, 1
+Within same count, sorted lexicographically
+
+
+
+
+
+
+
 
 
 

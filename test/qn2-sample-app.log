@@ -1,0 +1,7 @@
+[12/Sep/2023:13:25:34 -0400] "POST /api/v1/users HTTP/1.1" 201 1024
+[12/Sep/2023:13:25:35 -0400] "POST /api/v1/orders HTTP/1.1" 200 2048
+[12/Sep/2023:13:25:36 -0400] "GET /api/v1/users HTTP/1.1" 200 512
+[12/Sep/2023:13:25:37 -0400] "POST /api/v1/users HTTP/1.1" 201 1536
+[12/Sep/2023:13:25:38 -0400] "POST /api/v1/products HTTP/1.1" 201 768
+[12/Sep/2023:13:25:39 -0400] "POST /api/v1/orders HTTP/1.1" 200 2560
+[12/Sep/2023:13:25:40 -0400] "POST /api/v1/orders HTTP/1.1" 201 1792
