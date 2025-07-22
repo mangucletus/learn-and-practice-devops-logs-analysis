@@ -1,3 +1,29 @@
+# Log Analyzer
+
+# The Log Analyzer is a Python script designed to parse and analyze log files. 
+# It provides functionalities to filter logs by timestamp, log level, or message, 
+# as well as generate summaries of the logs.
+
+# run it as 
+# python3 script.py test.log
+
+# You can also filter logs by timestamp, log level, or message content. Here are some examples:
+
+#    - Filter logs by timestamp range:
+
+#      python3 script.py test.log "2024-06-08 10:00:00" "2024-06-08 10:30:00"
+
+#    - Filter logs by log level:
+
+#      python3 script.py test.log ERROR
+
+#    - Filter logs by message content:
+
+#      python3 script.py test.log "Database connection failed"
+
+#    Replace `"test.log"` with the path to your log file and adjust filtering criteria as needed.
+
+
 import json
 import sys
 from datetime import datetime as dt
